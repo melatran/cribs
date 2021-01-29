@@ -1,12 +1,24 @@
-class Rom
+class Room
+  attr_reader :category,
+              :length,
+              :width
 
   def initialize(category, length, width)
     @category = category
-    @length = 10
+    @length = length
     @width = width
+    @painted = false
   end
 
   def area
-    @length * @width
+    @length.to_i * @width.to_i
+  end
+
+  def is_painted?
+    @painted
+  end
+
+  def paint
+    @painted = true
   end
 end
